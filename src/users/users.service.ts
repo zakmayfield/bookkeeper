@@ -1,9 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from './prisma.service';
+import { PrismaService } from '../prisma.service';
 import { User, Prisma } from '@prisma/client';
 
+/*
+  Note about services: Services should have a clear and focused responsibility, following the Single Responsibility Principle (SRP). They can also have dependencies injected into them, such as repositories or other services, to perform their tasks.
+ */
+
 @Injectable()
-export class UserService {
+export class UsersService {
   constructor(private prisma: PrismaService) {}
 
   async user(

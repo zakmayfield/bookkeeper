@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../prisma.service';
 import { Book, Prisma } from '@prisma/client';
 
+// this @Injectable() decorator allows me to inject BooksService into the BooksController
+// which in turn allows BooksController to access our module services
 @Injectable()
 export class BooksService {
   constructor(private prisma: PrismaService) {}
